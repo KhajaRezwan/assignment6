@@ -1,0 +1,17 @@
+# Use Alpine as the base image (lightweight Linux distribution)
+FROM alpine:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install any dependencies you need (e.g., curl, bash)
+RUN apk add --no-cache bash curl
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Example command to run
+CMD ["echo", "Hello, Docker!"]
+
+# Expose port 80 (if you plan to run a web service)
+EXPOSE 80
